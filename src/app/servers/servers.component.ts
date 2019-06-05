@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { timingSafeEqual } from 'crypto';
 
 @Component({
     selector: 'app-servers',
@@ -15,6 +16,7 @@ export class ServersComponent implements OnInit {
     serverCreationStatus = "no server was created";
     serverName = 'Testserver';
     serverCreated = false;
+    servers = ['Testserver', 'Testserver2'];
     
     constructor () {
         setTimeout(() => {
@@ -28,6 +30,7 @@ export class ServersComponent implements OnInit {
 
     onCreateServer () {
         this.serverCreated = true;
+        this.servers.push(this.serverName);
         this.serverCreationStatus = 'Server was created! Server Name: '+ this.serverName;
     }
 

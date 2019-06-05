@@ -1,2 +1,4 @@
-
-<p> Server with ID {{ serverId }} is {{ serverStatus }} </p>
+<marquee [ngStyle]="{backgroundColor: getColor()}" [ngClass]="{online: serverStatus === 'online'}">
+    <!-- <p style="color: white;"> Server with ID {{ serverId }} is {{ serverStatus }} </p> -->
+    Server with ID {{ serverId }} is {{ serverStatus }}
+</marquee>
